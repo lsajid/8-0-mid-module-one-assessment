@@ -26,7 +26,18 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+let totalCount = 0;
+  for(let i=0; i<animals.length; i++){
+    count = animals[i].count 
+    if (count) {
+     totalCount += count;
+    } else {
+      totalCount = 0;
+    }
+  }
+  return totalCount;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -40,7 +51,13 @@ function getTotalCount(animals) {}
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+let animalStringArr = [];
+  for(let i=0; i < animals.length; i++){
+    animalStringArr.push(animals[i].kind)
+  }
+return animalStringArr;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -59,7 +76,16 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  let animalsMoreThanMinimumArr = [];
+    for(let i=0; i< animals.length;i++){
+      let minimumAnimal = animals[0].count;
+        if(animals[i].count >= minimum){     
+        animalsMoreThanMinimumArr.push(animals[i]);
+      } 
+    }
+  return animalsMoreThanMinimumArr;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -73,7 +99,20 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  let animalCountArr = [];
+
+  let animalCount = animals[0].count;
+  for (let i=0;i < animals.length; i++){
+    if(animalCount < animals[i].count){
+      x = animals[i].filter(i => i[count != animalCount[count]])
+      animalCountArr.pop(x);
+    }
+  }
+  return animalCountArr;
+} 
+
+
 
 // Do not change anything below this line.
 module.exports = {
